@@ -1,6 +1,6 @@
 {
   "name": "@dgrammatiko/compress",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Compresses any `.min.js` and `.min.css` files in the current folder (recursively). Any existing output files (`.br` or `.gz`) will always be recreated.",
   "main": "index.js",
   "engines": {
