@@ -5,8 +5,8 @@ Any existing output files (`.br` or `.gz`) will always be recreated.
 
 ## How to
 - Go to the folder that stores all your static assets (`.min.js` and `.min.css`)
-- execute `npx @dgrammatiko/compress`
-- add the flag `-b` (eg: `npx @dgrammatiko/compress -b`) to create both the `.br` and `.gz` files
+- execute `npx --no-install github:dgrammatiko/compress`
+- add the flag `-b` (eg: `npx --no-install github:dgrammatiko/compress -b`) to create both the `.br` and `.gz` files
 
 
 
