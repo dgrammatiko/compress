@@ -19,11 +19,11 @@ console.log(`Will compress files to .gz ${enableBrotli ? 'and .br' : ''}`);
  *
  * @returns { void }
  */
-getFiles(process.cwd())
+getFiles(`${process.cwd()}/`)
   .then(async files => {
     for (const file of files) {
-      compressFile(file, true);
+      compressFile(file, enableBrotli);
     }
   })
-  .then(_ => { console.log('Done 👍'); process.exit(err ? 1 : 0); })
+  .then(_ => { console.log('Done 👍');})
   .catch(err => process.exit(err ? 1 : 0));
