@@ -1,0 +1,20 @@
+{
+  "name": "compress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+    "engines": {
+    "node": "^10.16.0 || >=11.7.0"
+  },
+  "bin": "./index",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgrammatiko/compress.git"
+  },
+  "author": "Dimitris Grammatikogiannis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgrammatiko/compress/issues"
+  },
+  "homepage": "https://github.com/dgrammatiko/compress#readme"
+}
