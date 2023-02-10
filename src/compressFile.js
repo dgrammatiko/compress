@@ -1,37 +1,17 @@
-const { readFile, writeFile } = require('fs').promises;
-const { promisify } = require("util");
-const { constants, gzip, brotliCompress } = require('zlib');
+import { readFile, writeFile } from 'fs/promises';
+import { Zstd } from "@hpcc-js/wasm/zstd";
 
-const gzipOpts = {
-  level: constants.Z_BEST_COMPRESSION,
-};
+const zstd = await Zstd.load();
+const compressionLevel = 19;
 
-const brotliOpts = {
-  params: {
-    [constants.BROTLI_PARAM_MODE]: constants.BROTLI_MODE_TEXT,
-    [constants.BROTLI_PARAM_QUALITY]: constants.BROTLI_MAX_QUALITY,
-  }
-};
-
-const gzipPromise = promisify(gzip);
-let gzipEncode = data => gzipPromise(data, gzipOpts);
-
-const brotliPromise = promisify(brotliCompress);
-let brotliEncode = data => brotliPromise(data, brotliOpts);
-
-const compressFile = async (file, enableBrotli) => {
+export async function compressFile(file) {
   if (file.endsWith('.min.js') || file.endsWith('.min.css')) {
       try {
         const data = await readFile(file);
-        await writeFile(`${file}.gz`, await gzipEncode(data));
-        if (enableBrotli) {
-          await writeFile(`${file}.br`, await brotliEncode(data));
-        }
+        await writeFile(`${file}.gz`, await zstd.compress(data, compressionLevel));
         console.log(file);
       } catch (err) {
         console.info(`Error on ${file}: ${err.code}`);
       }
   }
 }
-
-module.exports.compressFile = compressFile;

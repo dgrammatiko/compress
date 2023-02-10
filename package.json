@@ -1,10 +1,11 @@
 {
   "name": "@dgrammatiko/compress",
-  "version": "1.0.3",
-  "description": "Compresses any `.min.js` and `.min.css` files in the current folder (recursively). Any existing output files (`.br` or `.gz`) will always be recreated.",
+  "version": "2.0.0-alpha1",
+  "description": "Compresses any `.min.js` and `.min.css` files in the current folder (recursively). Any existing output files (`.gz`) will always be recreated.",
+  "type": "module",
   "main": "index.js",
   "engines": {
-    "node": "^10.16.0 || >=11.7.0"
+    "node": ">=18.0.0"
   },
   "bin": {
     "compress": "index.js"
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/dgrammatiko/compress#readme",
   "scripts": {
     "compress": "node index.js"
+  },
+  "dependencies": {
+    "@hpcc-js/wasm": "^2.8.0"
   }
 }
