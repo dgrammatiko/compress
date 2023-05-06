@@ -1,10 +1,10 @@
-import { readFile, writeFile } from 'fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { Zstd } from "@hpcc-js/wasm/zstd";
 
 const zstd = await Zstd.load();
 const compressionLevel = 19;
 
-export async function compressFile(file) {
+async function compressFile(file) {
   if (file.endsWith('.min.js') || file.endsWith('.min.css')) {
       try {
         const data = await readFile(file);
@@ -15,3 +15,5 @@ export async function compressFile(file) {
       }
   }
 }
+
+export {compressFile};
