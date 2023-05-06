@@ -1,5 +1,5 @@
-const { readdir } = require('fs').promises;
-const { extname } = require('path');
+import { readdir } from 'node:fs/promises';
+import { extname } from 'node:path';
 
 /**
  * Get files recursively
@@ -25,4 +25,4 @@ async function getFiles(path) {
   return files;
 }
 
-module.exports.getFiles = getFiles;
+export {getFiles};
