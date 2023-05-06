@@ -21,9 +21,14 @@
   },
   "homepage": "https://github.com/dgrammatiko/compress#readme",
   "scripts": {
+    "update": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)  --save-exact",
+    "prepublishOnly": "np --no-cleanup --yolo --no-publish",
     "compress": "node index.js"
   },
   "dependencies": {
-    "@hpcc-js/wasm": "^2.8.0"
+    "@hpcc-js/wasm": "2.13.0"
+  },
+  "devDependencies": {
+    "np": "^7.7.0"
   }
 }
