@@ -29,6 +29,6 @@
     "@hpcc-js/wasm": "2.15.3"
   },
   "devDependencies": {
-    "np": "^9.0.0"
+    "np": "^10.0.0"
   }
 }
