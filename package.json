@@ -26,7 +26,7 @@
     "compress": "node index.js"
   },
   "dependencies": {
-    "@hpcc-js/wasm": "2.18.0"
+    "@hpcc-js/wasm": "2.22.4"
   },
   "devDependencies": {
     "np": "^10.0.0"
