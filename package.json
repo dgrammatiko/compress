@@ -23,7 +23,8 @@
   "scripts": {
     "update": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)  --save-exact",
     "prepublishOnly": "np --no-cleanup --yolo --no-publish",
-    "compress": "node index.js"
+    "compress": "node index.js",
+    "test": "node index.js"
   },
   "dependencies": {
     "@hpcc-js/wasm": "2.22.4"
