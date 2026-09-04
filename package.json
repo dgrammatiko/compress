@@ -27,7 +27,7 @@
     "test": "node index.js"
   },
   "dependencies": {
-    "@hpcc-js/wasm": "2.34.0"
+    "@hpcc-js/wasm": "2.35.1"
   },
   "devDependencies": {
     "np": "^11.0.0"
